@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<html>
 	<head>
 		<title>Javascript Demo</title>
 		<style>
@@ -24,23 +25,17 @@
 		Coding is <div id="magic"></div>
 
 		<script>
-			var words = ["fun",
-			"exciting", 
-			"about not giving up", 
-			"being helpful", 
-			"being open", 
-			"what I learned at CodingDojo!"],
-
-			el = document.getElementById('magic'),
-			word_counter = 0,
-			character_counter = 0;
+			var words = ["fun","exciting","about not giving up", "being helpful", "being open", "what I learned at CodingDojo!"];
+			var el = document.getElementById('magic');
+			var word_counter = 0;
+			var character_counter = 0;
 
 			function updateText()
 			{
 				el.innerHTML = el.innerHTML+words[word_counter][character_counter];
-				character_counter++;
 				console.log(words[word_counter][character_counter]);
 				console.log(word_counter,character_counter);
+				character_counter++;
 				if(character_counter > words[word_counter].length)
 				{
 					word_counter++; 	//choose a different word
@@ -48,15 +43,10 @@
 					el.innerHTML = '';  //set the html to be blank
 
 					//if we're displaying the last word, go back to the first word
-					if(word_counter == words.length)
-						word_counter = 0;
+					if(word_counter == words.length){ word_counter = 0; }
 				}
-
 			}
-
-			setInterval(updateText,400);
-
+			setInterval(updateText,500);
 		</script>
-
 	</body>
 </html>
